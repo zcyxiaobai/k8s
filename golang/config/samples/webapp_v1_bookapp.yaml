@@ -1,0 +1,18 @@
+apiVersion: webapp.y2505.com/v1
+kind: Bookapp
+metadata:
+  labels:
+    app.kubernetes.io/name: bookapp
+    app.kubernetes.io/managed-by: kustomize
+  name: bookapp-sample
+spec:
+  size: 2 
+  image: nginx:latest
+  imagePullPolicy: IfNotPresent
+  port:
+    name: web
+    targetPort: 80
+    port: 80
+  serverName: www.y2505.com
+
+  # TODO(user): Add fields here

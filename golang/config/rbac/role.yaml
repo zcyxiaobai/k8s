@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - webapp.y2505.com
+  resources:
+  - bookapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.y2505.com
+  resources:
+  - bookapps/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webapp.y2505.com
+  resources:
+  - bookapps/status
+  verbs:
+  - get
+  - patch
+  - update
